@@ -196,7 +196,7 @@ async def create_new_thread_records(
     prompt: str,
     agent_run_id: str,
     message_content: str,
-    agent_config: dict,
+    agent_config: Optional[dict],
     metadata: Optional[Dict[str, Any]],
     memory_enabled: Optional[bool],
 ) -> None:
@@ -215,8 +215,8 @@ async def create_new_thread_records(
         thread_name="New Chat",
         agent_run_id=agent_run_id,
         message_content=message_content,
-        agent_id=agent_config.get("agent_id"),
-        agent_version_id=agent_config.get("agent_version_id"),
+        agent_id=agent_config.get("agent_id") if agent_config else None,
+        agent_version_id=agent_config.get("agent_version_id") if agent_config else None,
         run_metadata=metadata,
         memory_enabled=memory_enabled
     )
