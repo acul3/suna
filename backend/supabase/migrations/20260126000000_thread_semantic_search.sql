@@ -21,7 +21,7 @@
 --    whose vectors are "close" to the query vector using cosine similarity.
 --    Closer vectors = more semantically similar content.
 --
--
+--
 -- Enable pgvector extension (idempotent - safe to run multiple times)
 CREATE EXTENSION IF NOT EXISTS vector;
 
